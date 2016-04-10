@@ -8,7 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		6B0C18291CA25AF90087C7AE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B0C18281CA25AF90087C7AE /* main.m */; };
+		6B0C18301CA2611F0087C7AE /* Calculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B0C182F1CA2611F0087C7AE /* Calculator.m */; };
+		6B82498B1CA75EDA008EE861 /* CalculatorTesting.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B82498A1CA75EDA008EE861 /* CalculatorTesting.m */; };
+		6B8249921CA761BF008EE861 /* Calculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B0C182F1CA2611F0087C7AE /* Calculator.m */; };
+		6B8249931CA761BF008EE861 /* Calculator.h in Sources */ = {isa = PBXBuildFile; fileRef = 6B8249811CA54A89008EE861 /* Calculator.h */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6B8249901CA76196008EE861 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6B0C181D1CA25AF90087C7AE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6B0C18241CA25AF90087C7AE;
+			remoteInfo = calculator;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		6B0C18231CA25AF90087C7AE /* CopyFiles */ = {
@@ -25,10 +39,22 @@
 /* Begin PBXFileReference section */
 		6B0C18251CA25AF90087C7AE /* calculator */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = calculator; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B0C18281CA25AF90087C7AE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6B0C182F1CA2611F0087C7AE /* Calculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Calculator.m; sourceTree = "<group>"; };
+		6B8249811CA54A89008EE861 /* Calculator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Calculator.h; sourceTree = "<group>"; };
+		6B8249881CA75EDA008EE861 /* CalculatorTesting.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalculatorTesting.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B82498A1CA75EDA008EE861 /* CalculatorTesting.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CalculatorTesting.m; sourceTree = "<group>"; };
+		6B82498C1CA75EDA008EE861 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		6B0C18221CA25AF90087C7AE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6B8249851CA75EDA008EE861 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -42,6 +68,7 @@
 			isa = PBXGroup;
 			children = (
 				6B0C18271CA25AF90087C7AE /* calculator */,
+				6B8249891CA75EDA008EE861 /* CalculatorTesting */,
 				6B0C18261CA25AF90087C7AE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -50,6 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				6B0C18251CA25AF90087C7AE /* calculator */,
+				6B8249881CA75EDA008EE861 /* CalculatorTesting.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -58,8 +86,19 @@
 			isa = PBXGroup;
 			children = (
 				6B0C18281CA25AF90087C7AE /* main.m */,
+				6B0C182F1CA2611F0087C7AE /* Calculator.m */,
+				6B8249811CA54A89008EE861 /* Calculator.h */,
 			);
 			path = calculator;
+			sourceTree = "<group>";
+		};
+		6B8249891CA75EDA008EE861 /* CalculatorTesting */ = {
+			isa = PBXGroup;
+			children = (
+				6B82498A1CA75EDA008EE861 /* CalculatorTesting.m */,
+				6B82498C1CA75EDA008EE861 /* Info.plist */,
+			);
+			path = CalculatorTesting;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -82,6 +121,24 @@
 			productReference = 6B0C18251CA25AF90087C7AE /* calculator */;
 			productType = "com.apple.product-type.tool";
 		};
+		6B8249871CA75EDA008EE861 /* CalculatorTesting */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6B82498D1CA75EDA008EE861 /* Build configuration list for PBXNativeTarget "CalculatorTesting" */;
+			buildPhases = (
+				6B8249841CA75EDA008EE861 /* Sources */,
+				6B8249851CA75EDA008EE861 /* Frameworks */,
+				6B8249861CA75EDA008EE861 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6B8249911CA76196008EE861 /* PBXTargetDependency */,
+			);
+			name = CalculatorTesting;
+			productName = CalculatorTesting;
+			productReference = 6B8249881CA75EDA008EE861 /* CalculatorTesting.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -92,6 +149,9 @@
 				ORGANIZATIONNAME = "Pascal Brokmeier";
 				TargetAttributes = {
 					6B0C18241CA25AF90087C7AE = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					6B8249871CA75EDA008EE861 = {
 						CreatedOnToolsVersion = 7.3;
 					};
 				};
@@ -109,9 +169,20 @@
 			projectRoot = "";
 			targets = (
 				6B0C18241CA25AF90087C7AE /* calculator */,
+				6B8249871CA75EDA008EE861 /* CalculatorTesting */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6B8249861CA75EDA008EE861 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6B0C18211CA25AF90087C7AE /* Sources */ = {
@@ -119,10 +190,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B0C18291CA25AF90087C7AE /* main.m in Sources */,
+				6B0C18301CA2611F0087C7AE /* Calculator.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6B8249841CA75EDA008EE861 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6B8249921CA761BF008EE861 /* Calculator.m in Sources */,
+				6B8249931CA761BF008EE861 /* Calculator.h in Sources */,
+				6B82498B1CA75EDA008EE861 /* CalculatorTesting.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6B8249911CA76196008EE861 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6B0C18241CA25AF90087C7AE /* calculator */;
+			targetProxy = 6B8249901CA76196008EE861 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		6B0C182A1CA25AF90087C7AE /* Debug */ = {
@@ -220,6 +310,28 @@
 			};
 			name = Release;
 		};
+		6B82498E1CA75EDA008EE861 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = CalculatorTesting/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = au.edu.uts.12537015.CalculatorTesting;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		6B82498F1CA75EDA008EE861 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = CalculatorTesting/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = au.edu.uts.12537015.CalculatorTesting;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -237,6 +349,15 @@
 			buildConfigurations = (
 				6B0C182D1CA25AF90087C7AE /* Debug */,
 				6B0C182E1CA25AF90087C7AE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6B82498D1CA75EDA008EE861 /* Build configuration list for PBXNativeTarget "CalculatorTesting" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6B82498E1CA75EDA008EE861 /* Debug */,
+				6B82498F1CA75EDA008EE861 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
