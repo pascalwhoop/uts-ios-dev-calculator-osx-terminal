@@ -17,6 +17,12 @@
 int main(int argc, const char * argv[]) {
     
     printf("Calculator by Pascal Brokmeier\n");
+    if(argc == 1){
+        printf("This is a calculator by Pascal Brokmeier. Enter a formula (spacing between each operands and operators) and see the result.");
+        printf("\n\nYou can use: + - x / and %%. \n");
+        printf("\nA -v flag shows how the algorithm processes your formula step by step. Enjoy!\n\n");
+        exit(0);
+    }
     
     int formulaStart = 1;
     int eq = strcmp("-v", argv[1]);
@@ -25,6 +31,7 @@ int main(int argc, const char * argv[]) {
         setVerbose(true);
         formulaStart++;
     }
+    
     
     
     
