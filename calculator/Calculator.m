@@ -114,13 +114,19 @@ int findOperand ( Symbol formula[], int i, int dir, int len){
 
 void copyArgsArrToSymbolArr(const char* source[],  Symbol destination[], int len, int start){
     for(int i = 0; i<len-start;i++){
+        //convert a number. a formula starts with a number so every 0,2,4,6 index is a number
         if(i%2==0){
             destination[i] = ((Symbol){
                 .type = is_int,
                 .val.ival = getInt((char*)source[i+start])
             });
             
-        }else{
+            }
+        //convert an operand
+        else{
+            if(!isOperand(source[i+start][0])){
+                errorExit("unrecognised operator! Try one of these: + - x / %\n");
+            }
             destination[i] = ((Symbol){
                 .type = is_char,
                 .val.cval = source[i+start][0]
@@ -135,6 +141,12 @@ void clean( Symbol
     formula[oprndI].type = is_null;
     formula[bI].type = is_null;
 }
+
+//determines wether we have an operand (or an operator). True = operand false = operator
+bool isOperand(char p){
+    return (p == '+' || p == '-' || p == 'x' || p == '/' || p == '%');
+}
+
 
 
 

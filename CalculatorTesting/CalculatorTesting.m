@@ -104,29 +104,29 @@ int result = 13;
 
 - (void) testCopyCharArrToSymbolArr {
     const char* cmdLineInput[6] = {
-        "command", "1", "*", "2", "+", "3"
+        "command", "1", "x", "2", "+", "3"
     };
     Symbol *formula = malloc(sizeof(Symbol)* 6);
     copyArgsArrToSymbolArr(cmdLineInput, formula, 6, 1);
     
     XCTAssertEqual(formula[0].type, is_int, "expect 1 to be in the first slot of the formula array");
     XCTAssertEqual(formula[0].val.ival, 1, "expect 1 to be in the first slot of the formula array");
-    XCTAssertEqual(formula[1].type, is_char, "expect * to be in the 2nd slot of the formula array");
-    XCTAssertEqual(formula[1].val.cval, '*', "expect * to be in the 2nd slot of the formula array");
+    XCTAssertEqual(formula[1].type, is_char, "expect x to be in the 2nd slot of the formula array");
+    XCTAssertEqual(formula[1].val.cval, 'x', "expect x to be in the 2nd slot of the formula array");
 }
 
 - (void) testVerboseFlagCopyCharArrToSymbolArr {
     const int size = 7;
     const char* cmdLineInput[size] = {
-        "command","-v", "1", "*", "2", "+", "3"
+        "command","-v", "1", "x", "2", "+", "3"
     };
     Symbol *formula = malloc(sizeof(Symbol)* size-2);
     copyArgsArrToSymbolArr(cmdLineInput, formula, 7, 2);
     
     XCTAssertEqual(formula[0].type, is_int, "expect 1 to be in the first slot of the formula array");
     XCTAssertEqual(formula[0].val.ival, 1, "expect 1 to be in the first slot of the formula array");
-    XCTAssertEqual(formula[1].type, is_char, "expect * to be in the 2nd slot of the formula array");
-    XCTAssertEqual(formula[1].val.cval, '*', "expect * to be in the 2nd slot of the formula array");
+    XCTAssertEqual(formula[1].type, is_char, "expect x to be in the 2nd slot of the formula array");
+    XCTAssertEqual(formula[1].val.cval, 'x', "expect x to be in the 2nd slot of the formula array");
 }
 
 - (void) testPerformCalculation{

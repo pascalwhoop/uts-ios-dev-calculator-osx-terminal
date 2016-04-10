@@ -37,7 +37,7 @@ void copyArgsArrToSymbolArr(const char* source[], Symbol destination[], int len,
 //helper functions
 void setVerbose(bool verbFlag);
 void clean(Symbol formula[], int oprndI, int bI); //place result at i-1 and clear i & i+1
-bool isOperand(char* p); //determines wether we have an operand (or an operator). True = operand false = operator
+bool isOperand(char p); //determines wether we have an operand (or an operator). True = operand false = operator
 int getInt(char* c);  //helper to convert string integer form to int object
 void printCurrentFormula(Symbol formula[], int len);
 void errorExit(char* message);
