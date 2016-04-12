@@ -75,31 +75,40 @@ void performOpAt ( Symbol formula[], int i, int len){
     //perform operation at given position in array
     int a = findOperand(formula, i, -1, len);
     int b = findOperand(formula, i, 1, len);
+    long lR;
     switch(formula[i].val.cval){
         case '+':
-            formula[a].val.ival += formula[b].val.cval;
+            lR = (long)formula[a].val.ival + (long)formula[b].val.ival;
+            formula[a].val.ival += formula[b].val.ival;
             clean(formula, i, b);
             break;
         case '-':
-            formula[a].val.ival -= formula[b].val.cval;
+            lR = (long)formula[a].val.ival - (long)formula[b].val.ival;
+            formula[a].val.ival -= formula[b].val.ival;
             clean(formula, i, b);
             break;
         case 'x':
-            formula[a].val.ival *= formula[b].val.cval;
+            lR = (long)formula[a].val.ival * (long)formula[b].val.ival;
+            formula[a].val.ival *= formula[b].val.ival;
             clean(formula, i, b);
             break;
         case '/':
-            formula[a].val.ival /= formula[b].val.cval;
+            catchDivZeros(formula[b].val.ival);
+            lR = (long)formula[a].val.ival / (long)formula[b].val.ival;
+            formula[a].val.ival /= formula[b].val.ival;
             clean(formula, i, b);
             break;
         case '%':
-            formula[a].val.ival %= formula[b].val.cval;
+            catchDivZeros(formula[b].val.ival);
+            lR = (long)formula[a].val.ival % (long)formula[b].val.ival;
+            formula[a].val.ival %= formula[b].val.ival;
             clean(formula, i, b);
             break;
         default:
             errorExit("unrecognised operator! Try one of these: + - x / %\n");
             break;
     }
+    catchOverflows(formula[a].val.ival,lR);
 }
 
 int findOperand ( Symbol formula[], int i, int dir, int len){
@@ -110,6 +119,18 @@ int findOperand ( Symbol formula[], int i, int dir, int len){
         }
     }
     return -1;
+}
+
+void catchDivZeros(int num){
+    if(num == 0){
+        errorExit("you cannot divide by 0\n");
+    }
+}
+
+void catchOverflows(int iResult, long lResult){
+    if((long)(iResult) != lResult){
+        errorExit("int overflow detected! Your numbers are too large \n");
+    }
 }
 
 void copyArgsArrToSymbolArr(const char* source[],  Symbol destination[], int len, int start){
